@@ -3,13 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to the new Talkomatic™!</title>
+    <title>Talkomatic™ - Real-Time Chat Platform | Classic & Modern Versions</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Experience real-time text communication with Talkomatic™. Choose between Classic and Modern versions featuring custom avatars, themes, and live chat rooms. Join the largest online chat community today!">
+    <meta name="keywords" content="Talkomatic, chat room, real-time chat, online chat, text communication, chat platform, instant messaging">
+    <meta name="author" content="Mohd Mahmodi">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+
+    <!-- Open Graph / Twitter Cards -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.talkomatic.co">
+    <meta property="og:title" content="Talkomatic™ - Real-Time Chat Platform">
+    <meta property="og:description" content="Join the ultimate real-time chat experience with Talkomatic. Choose between Classic and Modern versions with custom features.">
+    <meta property="og:image" content="https://www.talkomatic.co/images/talkomatic-preview.jpg">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@mohdmahmodi">
+    <meta name="twitter:title" content="Talkomatic™ - Real-Time Chat Platform">
+    <meta name="twitter:description" content="Experience real-time text communication with custom features, themes, and live chat rooms.">
+    <meta name="twitter:image" content="https://www.talkomatic.co/images/talkomatic-preview.jpg">
+
+    <link rel="icon" type="image/jpeg" href="/favicon.jpg">
+    <link rel="canonical" href="https://www.talkomatic.co">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Talkomatic",
+      "url": "https://www.talkomatic.co",
+      "description": "Real-time text communication platform with Classic and Modern versions",
+      "applicationCategory": "Communication",
+      "operatingSystem": "All",
+      "author": {
+        "@type": "Person",
+        "name": "Mohd Mahmodi"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "features": [
+        "Real-time chat",
+        "Custom avatars",
+        "Personalized themes",
+        "Text colors",
+        "Multiple chat rooms"
+      ]
+    }
+    </script>
+
     <style>
         @font-face {
             font-family: 'Sansation';
             src: url('fonts/Sansation_Light.ttf') format('truetype');
             font-weight: 300;
             font-style: normal;
+            font-display: swap;
         }
 
         body {
@@ -25,6 +79,7 @@
         }
         .container {
             width: 100%;
+            max-width: 1200px;
         }
         .section {
             background-color: #202020;
@@ -48,9 +103,12 @@
             display: flex;
             justify-content: space-between;
             margin-top: 20px;
+            flex-wrap: wrap;
+            gap: 20px;
         }
         .lobby {
-            width: 48%;
+            flex: 1;
+            min-width: 300px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -59,7 +117,7 @@
             background-color: #000;
             color: #fff;
             border: 1px solid #ffa500;
-            padding: 8px 10px;
+            padding: 8px 20px;
             border-radius: 3px;
             cursor: pointer;
             margin-bottom: 10px;
@@ -67,10 +125,14 @@
             font-size: 18px;
             text-decoration: none;
             display: inline-block;
+            transition: all 0.3s ease;
         }
         .button:hover {
             background-color: #ffffff;
             color: #000;
+        }
+        .talkomegle-button {
+            border-color: #4CAF50;
         }
         p {
             margin: 10px 0;
@@ -88,6 +150,28 @@
         ul ul {
             padding-left: 20px;
         }
+        footer {
+            width: 100%;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: auto;
+            border-top: 1px solid #333;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .footer-link {
+            color: #ff9800;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+        .footer-link:hover {
+            color: #fff;
+        }
 
         @media (max-width: 768px) {
             body {
@@ -103,15 +187,16 @@
                 font-size: 16px;
                 line-height: 24px;
             }
-            .lobby-options {
-                flex-direction: column;
-            }
             .lobby {
                 width: 100%;
+                min-width: 100%;
                 margin-bottom: 20px;
             }
             ul {
                 padding-left: 15px;
+            }
+            .footer-links {
+                gap: 15px;
             }
         }
 
@@ -127,6 +212,10 @@
                 font-size: 16px;
                 padding: 6px 8px;
             }
+            .footer-links {
+                flex-direction: column;
+                gap: 10px;
+            }
         }
     </style>
 </head>
@@ -137,43 +226,61 @@
             <p><span class="highlight">Talkomatic</span> is an online platform for real-time text communication, essentially a chat room. Users can type messages, and everyone in the room can see the messages as they are being typed.</p>
         </div>
         <div class="section">
-          <h1>Choose Your Talkomatic Experience</h1>
+            <h1>Choose Your Talkomatic Experience</h1>
             <p>Talkomatic has two different versions: Classic Version and Modern Version. You may choose which one you would like to visit and use below. Feel free to switch between them.</p>
             <div class="lobby-options">
-              <div class="lobby">
-                  <a href="https://open.talkomatic.co" class="button">Classic Version ⇥</a>
-                  <p>This version of Talkomatic is similar to the version before it was shut down.</p>
-                  <ul>
-                      <li>Open source</li>
-                      <li>Original functionality preserved</li>
-                      <li>Create and join chatrooms as usual</li>
-                      <li>No new features added</li>
-                      <li>Does not include:
-                          <ul>
-                              <li>Word filters</li>
-                              <li>Custom avatars</li>
-                              <li>Text colors</li>
-                          </ul>
-                      </li>
-                  </ul>
-              </div>
-              <div class="lobby">
-                <a href="https://talkomatic.co" class="button">Modern Version ⇥</a>
-                <p>This is the latest and most popular version of Talkomatic</p>
-                <ul>
-                    <li>Constant updates and largest user base</li>
-                    <li>Account system with customization:
-                        <ul>
-                            <li>Custom avatars/profile pictures</li>
-                            <li>Personalized themes</li>
-                            <li>Custom text colors</li>
-                        </ul>
-                    </li>
-                    <li>Modern, responsive UI for all devices and browsers</li>
-                </ul>
-            </div>
+                <div class="lobby">
+                    <a href="https://open.talkomatic.co" class="button" aria-label="Visit Classic Version">Classic Version ⇥</a>
+                    <p>This version of Talkomatic is similar to the version before it was shut down.</p>
+                    <ul>
+                        <li>Open source</li>
+                        <li>Original functionality preserved</li>
+                        <li>Create and join chatrooms as usual</li>
+                        <li>Does not include:
+                            <ul>
+                                <li>Custom avatars</li>
+                                <li>Text colors</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="lobby">
+                    <a href="https://modern.talkomatic.co" class="button" aria-label="Visit Modern Version">Modern Version ⇥</a>
+                    <p>This is the latest and most popular version of Talkomatic</p>
+                    <ul>
+                        <li>Constant updates and largest user base</li>
+                        <li>Account system with customization:
+                            <ul>
+                                <li>Custom avatars/profile pictures</li>
+                                <li>Personalized themes</li>
+                                <li>Custom text colors</li>
+                            </ul>
+                        </li>
+                        <li>Modern, responsive UI for all devices and browsers</li>
+                    </ul>
+                </div>
             </div>
         </div>
+        <div class="section">
+            <h1>Try Talkomegle</h1>
+            <p>Looking for random chat? Connect with strangers through text or video chat on our sister platform.</p>
+            <a href="https://talkomegle.com" class="button talkomegle-button" aria-label="Visit Talkomegle">Visit Talkomegle ⇥</a>
+            <ul style="max-width: 600px; margin: 20px auto;">
+                <li>Random text and video chat with strangers</li>
+                <li>Skip users</li>
+                <li>No registration required</li>
+                <li>Works on all devices</li>
+                <li><strong>Note:</strong> No video or text moderation is in place, stay safe.</li>
+            </ul>
+        </div>
     </div>
+    <footer>
+        <div class="footer-links">
+            <a href="contact.html" class="footer-link">Contact</a>
+            <a href="donate.html" class="footer-link">Donate</a>
+            <a href="faq.html" class="footer-link">FAQ</a>
+            <a href="terms.html" class="footer-link">Terms of Service</a>
+        </div>
+    </footer>
 </body>
 </html>
