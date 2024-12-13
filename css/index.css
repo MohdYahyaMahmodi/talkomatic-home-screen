@@ -1,0 +1,161 @@
+
+        @font-face {
+            font-family: 'Sansation';
+            src: url('fonts/Sansation_Light.ttf') format('truetype');
+            font-weight: 300;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        body {
+            font-family: 'Sansation', sans-serif;
+            background-color: #202020;
+            color: #fff;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 1200px;
+        }
+        .section {
+            background-color: #202020;
+            border: 1px solid #f44336;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        h1 {
+            color: #ff9800;
+            margin-top: 0;
+            font-size: 36px;
+            font-weight: 300;
+        }
+        .highlight {
+            font-style: italic;
+            color: yellow;
+        }
+        .lobby-options {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .lobby {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .button {
+            background-color: #000;
+            color: #fff;
+            border: 1px solid #ffa500;
+            padding: 8px 20px;
+            border-radius: 3px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            font-family: 'Sansation', sans-serif;
+            font-size: 18px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        .button:hover {
+            background-color: #ffffff;
+            color: #000;
+        }
+        .talkomegle-button {
+            border-color: #4CAF50;
+        }
+        p {
+            margin: 10px 0;
+            font-size: 18px;
+            line-height: 27px;
+        }
+        ul {
+            text-align: left;
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+        ul ul {
+            padding-left: 20px;
+        }
+        footer {
+            width: 100%;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: auto;
+            border-top: 1px solid #333;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .footer-link {
+            color: #ff9800;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+        .footer-link:hover {
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            .section {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 28px;
+            }
+            p {
+                font-size: 16px;
+                line-height: 24px;
+            }
+            .lobby {
+                width: 100%;
+                min-width: 100%;
+                margin-bottom: 20px;
+            }
+            ul {
+                padding-left: 15px;
+            }
+            .footer-links {
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 24px;
+            }
+            p {
+                font-size: 14px;
+                line-height: 21px;
+            }
+            .button {
+                font-size: 16px;
+                padding: 6px 8px;
+            }
+            .footer-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    

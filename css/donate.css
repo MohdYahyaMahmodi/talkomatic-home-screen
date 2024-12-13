@@ -1,0 +1,167 @@
+
+        @font-face {
+            font-family: 'Sansation';
+            src: url('fonts/Sansation_Light.ttf') format('truetype');
+            font-weight: 300;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        body {
+            font-family: 'Sansation', sans-serif;
+            background-color: #202020;
+            color: #fff;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 800px;
+            margin-bottom: 40px;
+        }
+        .section {
+            background-color: #202020;
+            border: 1px solid #f44336;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        h1 {
+            color: #ff9800;
+            margin-top: 0;
+            font-size: 36px;
+            font-weight: 300;
+        }
+        h2 {
+            color: #ff9800;
+            font-size: 24px;
+            font-weight: 300;
+            margin-top: 30px;
+        }
+        .highlight {
+            color: #4CAF50;
+            font-weight: bold;
+        }
+        .donation-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .donation-card {
+            background-color: rgba(0, 0, 0, 0.2);
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .donation-card:hover {
+            transform: translateY(-5px);
+        }
+        .donation-info {
+            margin: 15px 0;
+            font-size: 18px;
+            line-height: 1.6;
+            color: #ddd;
+        }
+        .perks-list {
+            text-align: left;
+            margin: 20px auto;
+            max-width: 500px;
+            list-style-position: inside;
+            padding-left: 0;
+        }
+        .perks-list li {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        .back-home {
+            color: #ff9800;
+            text-decoration: none;
+            font-size: 18px;
+            margin-top: 20px;
+            display: inline-block;
+            transition: color 0.3s ease;
+        }
+        .back-home:hover {
+            color: #fff;
+        }
+        .button-container {
+            margin: 20px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        footer {
+            width: 100%;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: auto;
+            border-top: 1px solid #333;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .footer-link {
+            color: #ff9800;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+        .footer-link:hover {
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            .section {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 28px;
+            }
+            h2 {
+                font-size: 22px;
+            }
+            .donation-info {
+                font-size: 16px;
+            }
+            .perks-list li {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 24px;
+            }
+            h2 {
+                font-size: 20px;
+            }
+            .donation-info {
+                font-size: 14px;
+            }
+            .perks-list li {
+                font-size: 14px;
+            }
+            .section {
+                padding: 15px;
+            }
+            .footer-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    
