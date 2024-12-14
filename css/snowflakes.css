@@ -31,23 +31,47 @@
   content: '❄'; /* Unicode snowflake character */
 }
 
-/* Combined Keyframes for falling and swaying */
+/* Updated Keyframes for falling with a smoother sine wave */
 @keyframes fall-sway {
   0% {
-    transform: translateY(0px) translateX(0px);
+    transform: translateY(0vh) translateX(0px);
+    opacity: 0.9;
+  }
+  10% {
+    transform: translateY(10vh) translateX(10px);
     opacity: 0.8;
   }
-  25% {
-    transform: translateY(25vh) translateX(20px);
+  20% {
+    transform: translateY(20vh) translateX(0px);
+    opacity: 0.7;
+  }
+  30% {
+    transform: translateY(30vh) translateX(-10px);
     opacity: 0.6;
   }
+  40% {
+    transform: translateY(40vh) translateX(10px);
+    opacity: 0.5;
+  }
   50% {
-    transform: translateY(50vh) translateX(-20px);
+    transform: translateY(50vh) translateX(0px);
     opacity: 0.4;
   }
-  75% {
-    transform: translateY(75vh) translateX(20px);
-    opacity: 0.2;
+  60% {
+    transform: translateY(60vh) translateX(-10px);
+    opacity: 0.3;
+  }
+  70% {
+    transform: translateY(70vh) translateX(10px);
+    opacity: 0.25;
+  }
+  80% {
+    transform: translateY(80vh) translateX(0px);
+    opacity: 0.15;
+  }
+  90% {
+    transform: translateY(90vh) translateX(10px);
+    opacity: 0.05;
   }
   100% {
     transform: translateY(100vh) translateX(0px);
@@ -197,4 +221,15 @@
   animation-delay: 3s;
 }
 
-/* Add more snowflakes as needed by duplicating the above blocks and adjusting the nth-of-type index */
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .snowflake {
+    font-size: 0.7em; /* Slightly smaller snowflakes on tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .snowflake {
+    font-size: 0.5em; /* Even smaller snowflakes on mobile */
+  }
+}
