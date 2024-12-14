@@ -23,7 +23,7 @@
             max-width: 1200px;
         }
         .section {
-            background-color: #202020;
+            background-color: #20202000;
             border: 1px solid #f44336;
             border-radius: 8px;
             padding: 20px;
@@ -170,9 +170,9 @@
         .chat-option {
             flex: 1;
             min-width: 280px;
-            background-color: #202020;
+            background-color: #20202000;
             border-radius: 8px;
-            padding: 20px;
+            padding: 20px 20px 20px 20px;
             text-align: center;
         }
         
@@ -203,5 +203,6 @@
             .chat-option {
                 width: 100%;
                 max-width: 500px;
+                padding: 20px 20px 0px 0px;
             }
         }
