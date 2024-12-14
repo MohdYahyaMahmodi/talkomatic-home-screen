@@ -1,7 +1,7 @@
 
         @font-face {
             font-family: 'Sansation';
-            src: url('fonts/Sansation_Light.ttf') format('truetype');
+            src: url('/fonts/Sansation_Light.ttf') format('truetype');
             font-weight: 300;
             font-style: normal;
             font-display: swap;
@@ -73,7 +73,7 @@
             color: #000;
         }
         .talkomegle-button {
-            border-color: #4CAF50;
+            border-color: #ffa500;
         }
         p {
             margin: 10px 0;
@@ -158,4 +158,50 @@
                 gap: 10px;
             }
         }
-    
+        .chat-options {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        /* Individual chat option styling */
+        .chat-option {
+            flex: 1;
+            min-width: 280px;
+            background-color: #202020;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        /* Specific button styling for Talkomatic CLI Edition v2 */
+        .talkomatic-cli-button {
+            background-color: #000000;
+            border-color: #ffa500;
+        }
+        
+        .talkomatic-cli-button:hover {
+            background-color: #ffffff;
+            color: #000000;
+        }
+        
+        /* Adjustments for nested lists within chat options */
+        .chat-option ul {
+            text-align: left;
+            padding-left: 20px;
+            margin: 15px 0 0 0;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .chat-options {
+                flex-direction: column;
+                align-items: center;
+            }
+            .chat-option {
+                width: 100%;
+                max-width: 500px;
+            }
+        }
