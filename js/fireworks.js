@@ -1,6 +1,7 @@
 // fireworks.js
 (function() {
   const container = document.querySelector('.fireworks');
+
   // How often to create a new firework (ms)
   const LAUNCH_INTERVAL_MIN = 500;
   const LAUNCH_INTERVAL_MAX = 1500;
@@ -14,20 +15,24 @@
     '#0000ff', '#7f00ff', '#ff00ff', '#ff007f'
   ];
 
-  function launchFirework() {
-    // 1) Create a firework container
+  /**
+   * Launches a firework at the specified x,y coordinates.
+   * If x,y are omitted or null, we choose random coordinates.
+   */
+  function launchFirework(x = null, y = null) {
     const firework = document.createElement('div');
     firework.classList.add('firework');
 
-    // 2) Random position within the viewport
-    const x = Math.random() * window.innerWidth;
-    const y = Math.random() * window.innerHeight * 0.7; 
-    // *0.7 so it’s not too close to the bottom
+    // If no coordinates are provided, pick random ones
+    if (x === null || y === null) {
+      x = Math.random() * window.innerWidth;
+      y = Math.random() * window.innerHeight * 0.7;
+    }
 
     firework.style.left = x + 'px';
     firework.style.top = y + 'px';
 
-    // 3) Create sparks
+    // Create SPARK_COUNT sparks
     for (let i = 0; i < SPARK_COUNT; i++) {
       const spark = document.createElement('div');
       spark.classList.add('spark');
@@ -35,15 +40,14 @@
       // Random color from the COLORS array
       const colorIndex = Math.floor(Math.random() * COLORS.length);
       spark.style.backgroundColor = COLORS[colorIndex];
-      
-      // Random angle & distance for each spark
-      const angle = Math.random() * 2 * Math.PI; // from 0 to 2π
-      // Let’s expand the distance range to make the explosion bigger
-      const distance = 80 + Math.random() * 120; // from 80px to 200px
+
+      // Random angle & distance
+      const angle = Math.random() * 2 * Math.PI; // 0 to 2π
+      const distance = 80 + Math.random() * 120; // 80px to 200px
       const sparkX = Math.cos(angle) * distance;
       const sparkY = Math.sin(angle) * distance;
 
-      // Using CSS variables to pass the offset
+      // Use CSS variables for the offset
       spark.style.setProperty('--sparkX', sparkX + 'px');
       spark.style.setProperty('--sparkY', sparkY + 'px');
 
@@ -52,8 +56,7 @@
 
     container.appendChild(firework);
 
-    // 4) Remove the firework from DOM after animation completes
-    //    We can wait a bit longer than sparkFly (1.5s) to be safe
+    // Remove the firework from the DOM after ~2.5s
     setTimeout(() => {
       if (firework && firework.parentNode) {
         firework.parentNode.removeChild(firework);
@@ -61,17 +64,29 @@
     }, 2500);
   }
 
-  function scheduleNextFirework() {
-    // Random delay between intervals
-    const delay =
-      Math.random() * (LAUNCH_INTERVAL_MAX - LAUNCH_INTERVAL_MIN) +
-      LAUNCH_INTERVAL_MIN;
+  /**
+   * Randomly spawns fireworks on an interval.
+   */
+  function scheduleRandomFirework() {
+    const delay = Math.random() * (LAUNCH_INTERVAL_MAX - LAUNCH_INTERVAL_MIN) + LAUNCH_INTERVAL_MIN;
     setTimeout(() => {
-      launchFirework();
+      launchFirework(); // No coords => random
       scheduleNextFirework();
     }, delay);
   }
 
-  // Start the chain
+  /**
+   * Helper function to keep chaining random fireworks.
+   */
+  function scheduleNextFirework() {
+    scheduleRandomFirework();
+  }
+
+  // (1) Start the chain of random fireworks
   scheduleNextFirework();
+
+  // (2) Spawn a firework wherever you click
+  document.addEventListener('click', (event) => {
+    launchFirework(event.clientX, event.clientY);
+  });
 })();
