@@ -1,30 +1,8 @@
 /* buttons.css */
 
-/* Ensure the button is positioned relative to contain the absolute positioned hat */
+/* Basic button styling carried over */
 .button {
   position: relative;
-  padding-left: 30px; /* Space for the Santa hat */
-}
-
-/* Add the Santa hat using the ::before pseudo-element */
-.button::before {
-  content: '';
-  position: absolute;
-  top: -10px; /* Adjust this value to position the hat vertically */
-  left: -10px; /* Adjust this value to position the hat horizontally */
-  width: 50px; /* Width of the Santa hat */
-  height: 50px; /* Height of the Santa hat */
-  background-image: url('../images/santa-hat.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  pointer-events: none; /* Ensures the hat doesn't block button clicks */
-  transform: rotate(-25deg); /* Rotates the hat 15 degrees counterclockwise */
-  transform-origin: bottom left; /* Sets the rotation origin */
-  transition: transform 0.3s ease; /* Smooth transition on hover */
-}
-
-/* Optional: Rotate the hat slightly on button hover for a playful effect */
-.button:hover::before {
-  transform: rotate(-35deg); /* Rotates the hat back to its original position */
+  /* Removed extra padding/positioning from the Santa hat */
+  padding-left: 20px;
 }

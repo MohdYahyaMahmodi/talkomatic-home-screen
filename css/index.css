@@ -1,208 +1,237 @@
+@font-face {
+    font-family: 'Sansation';
+    src: url('/fonts/Sansation_Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
 
-        @font-face {
-            font-family: 'Sansation';
-            src: url('/fonts/Sansation_Light.ttf') format('truetype');
-            font-weight: 300;
-            font-style: normal;
-            font-display: swap;
-        }
+body {
+    font-family: 'Sansation', sans-serif;
+    background-color: #202020;
+    color: #fff;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
 
-        body {
-            font-family: 'Sansation', sans-serif;
-            background-color: #202020;
-            color: #fff;
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-        }
-        .container {
-            width: 100%;
-            max-width: 1200px;
-        }
-        .section {
-            background-color: #20202000;
-            border: 1px solid #f44336;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        h1 {
-            color: #ff9800;
-            margin-top: 0;
-            font-size: 36px;
-            font-weight: 300;
-        }
-        .highlight {
-            font-style: italic;
-            color: yellow;
-        }
-        .lobby-options {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        .lobby {
-            flex: 1;
-            min-width: 300px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .button {
-            background-color: #000;
-            color: #fff;
-            border: 1px solid #ffa500;
-            padding: 8px 20px;
-            border-radius: 3px;
-            cursor: pointer;
-            margin-bottom: 10px;
-            font-family: 'Sansation', sans-serif;
-            font-size: 18px;
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.3s ease;
-        }
-        .button:hover {
-            background-color: #ffffff;
-            color: #000;
-        }
-        .talkomegle-button {
-            border-color: #ffa500;
-        }
-        p {
-            margin: 10px 0;
-            font-size: 18px;
-            line-height: 27px;
-        }
-        ul {
-            text-align: left;
-            padding-left: 20px;
-            margin: 10px 0;
-        }
-        li {
-            margin-bottom: 5px;
-        }
-        ul ul {
-            padding-left: 20px;
-        }
-        footer {
-            width: 100%;
-            text-align: center;
-            padding: 20px 0;
-            margin-top: auto;
-            border-top: 1px solid #333;
-        }
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        .footer-link {
-            color: #ff9800;
-            text-decoration: none;
-            font-size: 16px;
-            transition: color 0.3s ease;
-        }
-        .footer-link:hover {
-            color: #fff;
-        }
+.newyears {
+    background-color: black;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 10px;
+}
 
-        @media (max-width: 768px) {
-            body {
-                padding: 10px;
-            }
-            .section {
-                padding: 15px;
-            }
-            h1 {
-                font-size: 28px;
-            }
-            p {
-                font-size: 16px;
-                line-height: 24px;
-            }
-            .lobby {
-                width: 100%;
-                min-width: 100%;
-                margin-bottom: 20px;
-            }
-            ul {
-                padding-left: 15px;
-            }
-            .footer-links {
-                gap: 15px;
-            }
-        }
+.newyears h1 {
+    margin: 0;
+}
 
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 24px;
-            }
-            p {
-                font-size: 14px;
-                line-height: 21px;
-            }
-            .button {
-                font-size: 16px;
-                padding: 6px 8px;
-            }
-            .footer-links {
-                flex-direction: column;
-                gap: 10px;
-            }
-        }
-        .chat-options {
-            display: flex;
-            justify-content: space-between;
-            gap: 20px;
-            margin-top: 20px;
-            flex-wrap: wrap;
-        }
-        
-        /* Individual chat option styling */
-        .chat-option {
-            flex: 1;
-            min-width: 280px;
-            background-color: #20202000;
-            border-radius: 8px;
-            padding: 20px 20px 20px 20px;
-            text-align: center;
-        }
-        
-        /* Specific button styling for Talkomatic CLI Edition v2 */
-        .talkomatic-cli-button {
-            background-color: #000000;
-            border-color: #ffa500;
-        }
-        
-        .talkomatic-cli-button:hover {
-            background-color: #ffffff;
-            color: #000000;
-        }
-        
-        /* Adjustments for nested lists within chat options */
-        .chat-option ul {
-            text-align: left;
-            padding-left: 20px;
-            margin: 15px 0 0 0;
-        }
-        
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .chat-options {
-                flex-direction: column;
-                align-items: center;
-            }
-            .chat-option {
-                width: 100%;
-                max-width: 500px;
-                padding: 20px 20px 0px 0px;
-            }
-        }
+.container {
+    width: 100%;
+    max-width: 1200px;
+}
+
+.section {
+    background-color: #20202000;
+    border: 1px solid #f44336;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h1 {
+    color: #ff9800;
+    margin-top: 0;
+    font-size: 36px;
+    font-weight: 300;
+}
+
+.highlight {
+    font-style: italic;
+    color: yellow;
+}
+
+.lobby-options {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.lobby {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.button {
+    background-color: #000;
+    color: #fff;
+    border: 1px solid #ffa500;
+    padding: 8px 20px;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    font-family: 'Sansation', sans-serif;
+    font-size: 18px;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    background-color: #ffffff;
+    color: #000;
+}
+
+.talkomegle-button {
+    border-color: #ffa500;
+}
+
+p {
+    margin: 10px 0;
+    font-size: 18px;
+    line-height: 27px;
+}
+
+ul {
+    text-align: left;
+    padding-left: 20px;
+    margin: 10px 0;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+ul ul {
+    padding-left: 20px;
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: auto;
+    border-top: 1px solid #333;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-link {
+    color: #ff9800;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    .section {
+        padding: 15px;
+    }
+    h1 {
+        font-size: 28px;
+    }
+    p {
+        font-size: 16px;
+        line-height: 24px;
+    }
+    .lobby {
+        width: 100%;
+        min-width: 100%;
+        margin-bottom: 20px;
+    }
+    ul {
+        padding-left: 15px;
+    }
+    .footer-links {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 24px;
+    }
+    p {
+        font-size: 14px;
+        line-height: 21px;
+    }
+    .button {
+        font-size: 16px;
+        padding: 6px 8px;
+    }
+    .footer-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+.chat-options {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+/* Individual chat option styling */
+.chat-option {
+    flex: 1;
+    min-width: 280px;
+    background-color: #20202000;
+    border-radius: 8px;
+    padding: 20px 20px 20px 20px;
+    text-align: center;
+}
+
+/* Specific button styling for Talkomatic CLI Edition v2 */
+.talkomatic-cli-button {
+    background-color: #000000;
+    border-color: #ffa500;
+}
+
+.talkomatic-cli-button:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Adjustments for nested lists within chat options */
+.chat-option ul {
+    text-align: left;
+    padding-left: 20px;
+    margin: 15px 0 0 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .chat-options {
+        flex-direction: column;
+        align-items: center;
+    }
+    .chat-option {
+        width: 100%;
+        max-width: 500px;
+        padding: 20px 20px 0px 0px;
+    }
+}
