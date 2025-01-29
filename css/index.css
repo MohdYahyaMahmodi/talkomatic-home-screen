@@ -18,16 +18,17 @@ body {
     min-height: 100vh;
 }
 
-.newyears {
+.valentines {
     width: 100%;
     text-align: center;
     padding: 10px;
     margin-bottom: 10px;
-}
-
-.newyears h1 {
+  }
+  
+  .valentines h1 {
     margin: 0;
-}
+    color: #ff66a3; /* A pinkish color */
+  }
 
 .container {
     width: 100%;

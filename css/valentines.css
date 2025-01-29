@@ -1,0 +1,139 @@
+/* valentines.css */
+.valentines-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: -1;
+  overflow: hidden;
+  background: transparent;
+}
+
+.valentines-banner {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    color: #ff69b4;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.valentines-banner h1 {
+    margin: 0;
+    animation: pulse 2s infinite;
+}
+
+.heart {
+    position: fixed;
+    pointer-events: none;
+    width: 25px;
+    height: 25px;
+    background: currentColor;
+    transform: rotate(45deg);
+    opacity: 0;
+}
+
+.heart::before,
+.heart::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: currentColor;
+    border-radius: 50%;
+}
+
+.heart::before {
+    left: -50%;
+}
+
+.heart::after {
+    top: -50%;
+}
+
+.rose {
+    position: fixed;
+    pointer-events: none;
+    font-size: 24px;
+    opacity: 0;
+    transform-origin: center;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(110vh) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-50vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes explodeHeart {
+    0% {
+        transform: translate(0, 0) rotate(45deg) scale(0.2);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+        transform: translate(var(--explode-x), var(--explode-y)) rotate(45deg) scale(0.4);
+    }
+    60% {
+        opacity: 1;
+        transform: translate(calc(var(--explode-x) * 2), calc(var(--explode-y) * 2)) rotate(90deg) scale(1);
+    }
+    100% {
+        transform: translate(calc(var(--explode-x) * 2.5), calc(var(--explode-y) * 2.5)) rotate(180deg) scale(0.4);
+        opacity: 0;
+    }
+}
+
+@keyframes sway {
+    0% {
+        margin-left: 0;
+    }
+    25% {
+        margin-left: 15px;
+    }
+    75% {
+        margin-left: -15px;
+    }
+    100% {
+        margin-left: 0;
+    }
+}
+
+.floating {
+    animation: floatUp var(--float-duration, 15s) linear forwards,
+               sway 5s ease-in-out infinite;
+}
+
+.floating-heart {
+    animation: floatUp var(--float-duration, 15s) linear forwards,
+               sway 5s ease-in-out infinite;
+}
+
+.clicked-heart {
+    animation: explodeHeart 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Prevent any horizontal scrolling */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
