@@ -100,6 +100,7 @@ p {
     margin: 10px 0;
     font-size: 18px;
     line-height: 27px;
+
 }
 
 ul {
@@ -235,3 +236,12 @@ footer {
         padding: 20px 20px 0px 0px;
     }
 }
+
+.button .beta {
+    background-color: rgb(243, 243, 66);
+    color: black;
+    padding: 0 4px;
+    border-radius: 3px;
+    margin-left: 2px;
+    font-size: 1em;
+  }
